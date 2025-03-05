@@ -63,7 +63,7 @@ int main(int argc, char **argv)
     if (check_valid_args(argv) == 1)
         return(1);
     init_program(&program, philos);
-    init forks(forks, ft_atoi(argv[1]));
+    init_forks(forks, ft_atoi(argv[1]));
     init_philo(philos, &program, forks, argv);
     thread_create(&program, forks);
 }

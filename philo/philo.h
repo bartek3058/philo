@@ -13,7 +13,7 @@ typedef struct s_philo
     pthread_t       thread;
     int                     id;
     int                     eating;
-    int                     meal_eaten;
+    int                     meals_eaten;
     size_t          last_meal;
     size_t          time_to_die;
     size_t          time_to_eat;
@@ -42,3 +42,7 @@ int check_valid_args(char **argv);
 int check_arg_number(char *str);
 void init_philo(t_philo *philos, t_program *program, pthread_mutex_t *forks, char **argv);
 size_t  get_current_time(void);
+void    destroy_all(char *str, t_program *program, pthread_mutex_t *forks);
+size_t  ft_atoi(char *str);
+int ft_strlen(char *s);
+
