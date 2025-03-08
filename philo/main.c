@@ -66,4 +66,6 @@ int main(int argc, char **argv)
     init_forks(forks, ft_atoi(argv[1]));
     init_philo(philos, &program, forks, argv);
     thread_create(&program, forks);
+    destroy_all(NULL, &program, forks);
+    return (0);
 }
