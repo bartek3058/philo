@@ -15,7 +15,7 @@ void init_input(t_philo *philo, char **argv)
 void init_philo(t_philo *philos, t_program *program, pthread_mutex_t *forks,
         char **argv)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while(i < ft_atoi(argv[1]))

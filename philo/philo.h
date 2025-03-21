@@ -37,12 +37,32 @@ typedef struct s_program
     t_philo                 *philos;
 }                                   t_program;
 
-int main(int argc, char **argv);
-int check_valid_args(char **argv);
-int check_arg_number(char *str);
+void init_input(t_philo *philo, char **argv);
 void init_philo(t_philo *philos, t_program *program, pthread_mutex_t *forks, char **argv);
-size_t  get_current_time(void);
+void init_forks(pthread_mutex_t *forks, int philo_num);
+void init_program(t_program *program, t_philo *philos);
+void	print_message(char *str, t_philo *philo, int id);
+void	*monitor(void *pointer);
+void	think(t_philo *philo);
+void	dream(t_philo *philo);
+void	eat(t_philo *philo);
+void	*philo_routine(void *pointer);
 void    destroy_all(char *str, t_program *program, pthread_mutex_t *forks);
-size_t  ft_atoi(char *str);
+int	thread_create(t_program *program, pthread_mutex_t *forks);
+int check_arg_number(char *str);
+int check_valid_args(char **argv);
+int main(int argc, char **argv);
+int	philosopher_dead(t_philo *philo, size_t time_to_die);
+int	check_if_dead(t_philo *philos);
+int	check_if_all_ate(t_philo *philos);
+int dead_loop(t_philo *philo);
 int ft_strlen(char *s);
+size_t  ft_atoi(char *str);
+size_t  get_current_time(void);
+void	ft_usleep(unsigned long time);
+
+#endif
+
+
+
 

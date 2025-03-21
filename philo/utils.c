@@ -27,7 +27,7 @@ size_t  ft_atoi(char *str)
     int             i;
 
     ret = 0;
-    sign = 0;
+    sign = 1;
     i = 0;
     while(str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
             || str[i] == '\f' || str[i] == '\r')
